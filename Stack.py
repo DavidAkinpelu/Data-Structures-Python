@@ -8,7 +8,7 @@ class StackNode:
         """
         Constructor for a stacknode object
         Arguments
-            data: data
+            data (Any): data
             next(StackNode): points to a stacknode objects
         """
         self.data = data
@@ -20,16 +20,16 @@ class Stack:
 
     def __init__(self):
         """
-        Constructor for a stacknode object
+        Constructor for a stack object
         Arguments
-            data: data
-            next(StackNode): points to a stacknode objects
+            top (StackNode): head pointer
+            size (int): size of the stack
         """
         self.top = None
         self.size = 0
 
     def isEmpty(self):
-        """ check if stack is empty.
+        """Check if stack is empty.
         Returns True if empty and False if otherwise """
         if self.top is None:
             return True

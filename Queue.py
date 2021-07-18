@@ -70,7 +70,7 @@ class Queue:
     def peek(self):
         """Returns the first data in the queue"""
         if self.isEmpty():
-            print("Empty stack")
+            print("Empty queue")
         else:
             return self.head.data
 
