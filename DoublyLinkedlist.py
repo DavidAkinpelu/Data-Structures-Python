@@ -14,6 +14,7 @@ class Node:
         """
         self.data = data
         self.next = None
+        self.prev = None
 
 
 class DoublyLinkedlist:
@@ -105,7 +106,7 @@ class DoublyLinkedlist:
         else:
             output = self.tail.data
             self.tail.prev.next = None
-            self.tail = self.head.prev
+            self.tail = self.tail.prev
         self.size-=1
         return output
 
@@ -134,13 +135,18 @@ class DoublyLinkedlist:
         if self.isEmpty():
             print("Empty list")
         else:
-            temp = self.head
-            while temp is not None:
-                if temp.data == data:
-                    return True
-                temp = temp.next
+            if self.head.data == data:
+                return True
+            elif self.tail.data == data:
+                return True
+            else:
+                temp = self.head
+                while temp is not None:
+                    if temp.data == data:
+                        return True
+                    temp = temp.next
 
-            return False
+                return False
 
     def printDoublyLinkedList(self):
         """Print all the data in the doubly linkedlist"""
